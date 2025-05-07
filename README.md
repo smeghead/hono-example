@@ -8,5 +8,10 @@ docker run -it -v $(pwd):/app -w /app denoland/deno:2.3.1 sh
 ```
 
 ```bash
-docker build -t app . && docker run -it -p 8000:8000 app
+docker compose build
+docker compose run --rm -P app bash
+```
+
+```bash
+deno run --allow-net --watch main.ts
 ```

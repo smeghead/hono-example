@@ -15,9 +15,9 @@ RUN apt update && apt install bash less vim -y
 COPY deps.ts .
 RUN deno install --entrypoint deps.ts
 
-# These steps will be re-run upon each file change in your working directory:
-COPY . .
-# Compile the main app so that it doesn't need to be compiled each startup/entry.
-RUN deno cache main.ts
+## These steps will be re-run upon each file change in your working directory:
+#COPY . .
+## Compile the main app so that it doesn't need to be compiled each startup/entry.
+#RUN deno cache main.ts
 
-CMD ["run", "--allow-net", "main.ts"]
+CMD ["deno", "run", "--allow-net", "--watch", "main.ts"]
