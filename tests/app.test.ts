@@ -1,5 +1,5 @@
 import { assertStrictEquals } from "https://deno.land/std@0.199.0/assert/mod.ts";
-import { app } from "../src/app.ts";
+import { app } from "../src/app.tsx";
 
 // filepath: /app/tests/app.test.ts
 
